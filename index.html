@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    Welcome to the telepresence robot control center.
+
+  There will be some controls here in the future...
+  <br>
+
+  <script>
+  function forward(){
+    // alert("Going forward");
+    fetch("https://127.0.0.1:5000/startMove")
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+  function right(){
+    // alert("Going right");
+    fetch("https://127.0.0.1:5000/turnRight")
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+  }
+  function left(){
+    // alert("Going left");
+    fetch("https://127.0.0.1:5000/turnLeft")
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+  }
+  function back(){
+    // alert("Going backward");
+    fetch("https://127.0.0.1:5000/stopMove")
+    .catch(function (error) {
+      console.log("Error: " + error);
+    });
+  }
+  </script>
+
+  <button onclick="forward();">
+    <img src="./images/triangle.gif" width="100" height="100">
+  </button>
+  <br>
+  <button onclick="left();">
+    <img style="transform: rotate(-90deg);" src="./images/triangle.gif" width="100" height="100">
+  </button>
+    <button onclick="right();">
+      <img style="transform: rotate(90deg);" src="./images/triangle.gif" width="100" height="100">
+    </button>
+  <br>
+  <button onclick="back();">
+    <img style="transform: rotate(180deg);" src="./images/triangle.gif" width="100" height="100">
+  </button>
+
+
+
+
+
+  </body>
+</html>
